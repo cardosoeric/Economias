@@ -1,0 +1,842 @@
+/* Estilos Gerais */
+:root {
+    --primary-dark: #1a0b2e;
+    --primary-medium: #2d1b69;
+    --primary-light: #6c4bb9;
+    --accent-blue: #4f6df5;
+    --accent-purple: #a78bfa;
+    --text-light: #e2e8f0;
+    --text-dark: #0f172a;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    color: var(--text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background: rgba(26, 11, 46, 0.95);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(108, 75, 185, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-weight: bold;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.logo i {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--accent-purple);
+    background: rgba(108, 75, 185, 0.1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: var(--accent-purple);
+    margin-bottom: 4px;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Seções */
+section {
+    padding: clamp(2rem, 8vw, 5rem) 0;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(108, 75, 185, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(79, 109, 245, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+    text-align: center;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    text-align: center;
+    margin-bottom: clamp(1.5rem, 6vw, 3rem);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(60px, 20vw, 100px);
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-bottom: 1rem;
+}
+
+/* Página Inicial */
+.hero {
+    text-align: center;
+    padding: clamp(4rem, 15vw, 8rem) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(108, 75, 185, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(79, 109, 245, 0.2) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.hero p {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    max-width: min(800px, 90%);
+    margin: 0 auto clamp(1.5rem, 6vw, 3rem);
+    color: var(--text-light);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+    color: white;
+    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(108, 75, 185, 0.4);
+    position: relative;
+    overflow: hidden;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    white-space: nowrap;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(108, 75, 185, 0.6);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Simulador de Orçamento */
+.budget-calculator {
+    background: rgba(26, 11, 46, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(108, 75, 185, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.budget-calculator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--accent-purple);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+input, select {
+    width: 100%;
+    padding: clamp(0.8rem, 2vw, 1rem);
+    border: 1px solid rgba(108, 75, 185, 0.3);
+    border-radius: 10px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: all 0.3s;
+    background: rgba(26, 11, 46, 0.5);
+    color: var(--text-light);
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 109, 245, 0.3);
+}
+
+button {
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+    color: white;
+    border: none;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: all 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(108, 75, 185, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(108, 75, 185, 0.6);
+}
+
+.result {
+    margin-top: 2rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    border-radius: 15px;
+    background: rgba(26, 11, 46, 0.7);
+    display: none;
+    border-left: 5px solid;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.positive {
+    border-left-color: var(--success);
+}
+
+.negative {
+    border-left-color: var(--danger);
+}
+
+/* Dicas de Consumo */
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+.tip-card {
+    background: rgba(26, 11, 46, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    text-align: center;
+    border: 1px solid rgba(108, 75, 185, 0.2);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.tip-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tip-icon {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.tip-card h3 {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    margin-bottom: 1rem;
+}
+
+.tip-card p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.5;
+}
+
+/* Infográficos */
+.infographic-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.infographic {
+    background: rgba(26, 11, 46, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(108, 75, 185, 0.2);
+    position: relative;
+}
+
+.infographic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+}
+
+.chart {
+    height: clamp(180px, 40vw, 250px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    margin: clamp(1rem, 3vw, 2rem) 0;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
+    gap: clamp(5px, 2vw, 10px);
+}
+
+.bar {
+    flex: 1;
+    max-width: 60px;
+    min-width: 30px;
+    background: linear-gradient(to top, var(--accent-purple), var(--accent-blue));
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: transform 0.3s;
+}
+
+.bar:hover {
+    transform: scale(1.05);
+}
+
+.bar-value {
+    position: absolute;
+    top: -25px;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    font-weight: bold;
+    color: var(--accent-purple);
+    text-align: center;
+    width: 100%;
+}
+
+.bar-label {
+    position: absolute;
+    bottom: -25px;
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+    text-align: center;
+    width: 100%;
+    color: var(--text-light);
+    word-wrap: break-word;
+}
+
+.infographic p {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Glossário */
+.glossary-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.term-card {
+    background: rgba(26, 11, 46, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    border: 1px solid rgba(108, 75, 185, 0.2);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.term-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-purple), var(--accent-blue));
+}
+
+.term-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.term {
+    font-weight: bold;
+    color: var(--accent-purple);
+    margin-bottom: 0.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.definition {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    line-height: 1.5;
+}
+
+/* Rodapé */
+footer {
+    background: rgba(26, 11, 46, 0.9);
+    color: var(--text-light);
+    text-align: center;
+    padding: clamp(2rem, 6vw, 3rem) 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(108, 75, 185, 0.3);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Efeitos de partículas */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(108, 75, 185, 0.3);
+    border-radius: 50%;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ========== RESPONSIVIDADE AVANÇADA ========== */
+
+/* Tablets (768px para baixo) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 11, 46, 0.98);
+        backdrop-filter: blur(15px);
+        padding: 1rem 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        gap: 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .budget-calculator {
+        padding: 1.5rem;
+    }
+
+    .chart {
+        height: 200px;
+    }
+
+    .bar {
+        min-width: 25px;
+    }
+}
+
+/* Celulares (480px para baixo) */
+@media (max-width: 480px) {
+    .container {
+        width: 98%;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo i {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .budget-calculator {
+        padding: 1rem;
+        border-radius: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    input, select {
+        padding: 0.7rem;
+    }
+
+    button {
+        padding: 0.8rem 1.2rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tips-container,
+    .glossary-container {
+        grid-template-columns: 1fr;
+    }
+
+    .infographic-container {
+        grid-template-columns: 1fr;
+    }
+
+    .chart {
+        height: 150px;
+        gap: 3px;
+    }
+
+    .bar {
+        min-width: 20px;
+    }
+
+    .bar-value {
+        font-size: 0.6rem;
+        top: -20px;
+    }
+
+    .bar-label {
+        font-size: 0.5rem;
+        bottom: -20px;
+    }
+
+    .tip-card,
+    .term-card {
+        padding: 1.2rem;
+    }
+
+    footer {
+        padding: 1.5rem 0;
+    }
+}
+
+/* Telas muito pequenas (320px para baixo) */
+@media (max-width: 320px) {
+    .container {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .budget-calculator {
+        padding: 0.8rem;
+    }
+
+    .chart {
+        height: 120px;
+    }
+
+    .bar {
+        min-width: 15px;
+    }
+}
+
+/* Telas grandes (1200px para cima) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .tips-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .glossary-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Orientação paisagem em celulares */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0;
+    }
+
+    section {
+        padding: 1.5rem 0;
+    }
+
+    .nav-links {
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+}
+
+/* Prevenção de zoom em inputs em iOS */
+@media (max-width: 480px) {
+    input, select, textarea {
+        font-size: 16px; /* Previne zoom no iOS */
+    }
+}
+
+/* Melhorias de acessibilidade para alto contraste */
+@media (prefers-contrast: high) {
+    .btn, button {
+        border: 2px solid white;
+    }
+
+    .nav-links a {
+        border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+        border-color: var(--accent-purple);
+    }
+}
+
+/* Modo escuro automático (para compatibilidade) */
+@media (prefers-color-scheme: dark) {
+    /* Já estamos usando tema escuro, então não precisa de alterações */
+}
+
+/* Otimização para impressão */
+@media print {
+    .particles,
+    .menu-toggle,
+    .btn,
+    button {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .budget-calculator,
+    .tip-card,
+    .infographic,
+    .term-card {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+}

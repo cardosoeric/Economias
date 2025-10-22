@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças Tech - Economia Doméstica e Finanças Pessoais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    Finanças Tech
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#simulador">Simulador</a></li>
+                    <li><a href="#dicas">Dicas</a></li>
+                    <li><a href="#infograficos">Infográficos</a></li>
+                    <li><a href="#glossario">Glossário</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>Economia Doméstica e Finanças Pessoais</h1>
+            <p>Uma plataforma tecnológica que integra conhecimentos de Matemática, Geografia, Sociologia e Português para promover organização financeira, consumo consciente e pensamento crítico.</p>
+            <a href="#simulador" class="btn">
+                <i class="fas fa-rocket"></i> Comece Agora
+            </a>
+        </div>
+    </section>
+
+    <section id="simulador">
+        <div class="container">
+            <h2>Simulador de Orçamento Mensal</h2>
+            <div class="budget-calculator">
+                <form id="budget-form">
+                    <div class="form-group">
+                        <label for="renda"><i class="fas fa-money-bill-wave"></i> Renda Mensal (R$)</label>
+                        <input type="number" id="renda" required min="0" step="0.01" placeholder="Ex: 3500.00">
+                    </div>
+                    
+                    <h3><i class="fas fa-home"></i> Despesas Fixas</h3>
+                    <div class="form-group">
+                        <label for="moradia">Moradia (aluguel, condomínio, IPTU)</label>
+                        <input type="number" id="moradia" value="0" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="transporte">Transporte (combustível, passagem, manutenção)</label>
+                        <input type="number" id="transporte" value="0" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="alimentacao">Alimentação</label>
+                        <input type="number" id="alimentacao" value="0" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="educacao">Educação (mensalidade, material)</label>
+                        <input type="number" id="educacao" value="0" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="saude">Saúde (plano, medicamentos)</label>
+                        <input type="number" id="saude" value="0" min="0" step="0.01">
+                    </div>
+                    
+                    <h3><i class="fas fa-shopping-cart"></i> Despesas Variáveis</h3>
+                    <div class="form-group">
+                        <label for="lazer">Lazer (cinema, restaurante, viagens)</label>
+                        <input type="number" id="lazer" value="0" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="vestuario">Vestuário</label>
+                        <input type="number" id="vestuario" value="0" min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="outros">Outras Despesas</label>
+                        <input type="number" id="outros" value="0" min="0" step="0.01">
+                    </div>
+                    
+                    <button type="submit">
+                        <i class="fas fa-calculator"></i> Calcular Orçamento
+                    </button>
+                </form>
+                
+                <div id="resultado" class="result"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dicas">
+        <div class="container">
+            <h2>Dicas de Consumo Consciente</h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Planejamento Financeiro</h3>
+                    <p>Estabeleça metas financeiras de curto, médio e longo prazo. Crie um orçamento mensal e acompanhe seus gastos regularmente.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-shopping-basket"></i></div>
+                    <h3>Compras Inteligentes</h3>
+                    <p>Pesquise preços, compare produtos e evite compras por impulso. Priorize a qualidade e durabilidade dos produtos.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Redução de Desperdício</h3>
+                    <p>Adote hábitos que reduzam o consumo de energia e água. Planeje suas refeições para evitar desperdício de alimentos.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Controle de Gastos</h3>
+                    <p>Utilize aplicativos ou planilhas para registrar todas as suas despesas. Identifique categorias onde pode economizar.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Consumo Sustentável</h3>
+                    <p>Prefira produtos com menor impacto ambiental. Considere a economia circular: reparar, reutilizar e reciclar.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Educação Financeira</h3>
+                    <p>Invista em seu conhecimento sobre finanças. Leia livros, participe de cursos e acompanhe notícias econômicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="infograficos">
+        <div class="container">
+            <h2>Infográficos com Dados Econômicos</h2>
+            <div class="infographic-container">
+                <div class="infographic">
+                    <h3>Distribuição de Gastos da Família Brasileira</h3>
+                    <div class="chart">
+                        <div class="bar" style="height: 70%;">
+                            <span class="bar-value">70%</span>
+                            <span class="bar-label">Moradia</span>
+                        </div>
+                        <div class="bar" style="height: 50%;">
+                            <span class="bar-value">50%</span>
+                            <span class="bar-label">Transporte</span>
+                        </div>
+                        <div class="bar" style="height: 60%;">
+                            <span class="bar-value">60%</span>
+                            <span class="bar-label">Alimentação</span>
+                        </div>
+                        <div class="bar" style="height: 30%;">
+                            <span class="bar-value">30%</span>
+                            <span class="bar-label">Saúde</span>
+                        </div>
+                        <div class="bar" style="height: 25%;">
+                            <span class="bar-value">25%</span>
+                            <span class="bar-label">Educação</span>
+                        </div>
+                        <div class="bar" style="height: 20%;">
+                            <span class="bar-value">20%</span>
+                            <span class="bar-label">Lazer</span>
+                        </div>
+                    </div>
+                    <p>Fonte: Dados fictícios baseados em padrões de consumo</p>
+                </div>
+                
+                <div class="infographic">
+                    <h3>Desigualdade Regional de Renda no Brasil</h3>
+                    <div class="chart">
+                        <div class="bar" style="height: 90%;">
+                            <span class="bar-value">90%</span>
+                            <span class="bar-label">Sudeste</span>
+                        </div>
+                        <div class="bar" style="height: 70%;">
+                            <span class="bar-value">70%</span>
+                            <span class="bar-label">Sul</span>
+                        </div>
+                        <div class="bar" style="height: 50%;">
+                            <span class="bar-value">50%</span>
+                            <span class="bar-label">Centro-Oeste</span>
+                        </div>
+                        <div class="bar" style="height: 40%;">
+                            <span class="bar-value">40%</span>
+                            <span class="bar-label">Nordeste</span>
+                        </div>
+                        <div class="bar" style="height: 30%;">
+                            <span class="bar-value">30%</span>
+                            <span class="bar-label">Norte</span>
+                        </div>
+                    </div>
+                    <p>Fonte: Dados fictícios para fins educacionais</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="glossario">
+        <div class="container">
+            <h2>Glossário de Termos Financeiros</h2>
+            <div class="glossary-container">
+                <div class="term-card">
+                    <div class="term">Orçamento</div>
+                    <div class="definition">Planejamento financeiro que estima receitas e despesas por um período determinado.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Renda</div>
+                    <div class="definition">Total de recursos financeiros recebidos por uma pessoa ou família em determinado período.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Despesa Fixa</div>
+                    <div class="definition">Gastos que se repetem mensalmente com valores relativamente constantes.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Despesa Variável</div>
+                    <div class="definition">Gastos que variam de valor conforme o consumo ou necessidades mensais.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Poupança</div>
+                    <div class="definition">Parte da renda que não é gasta e é reservada para necessidades futuras.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Investimento</div>
+                    <div class="definition">Aplicação de recursos financeiros com expectativa de ganhos no futuro.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Juros</div>
+                    <div class="definition">Remuneração cobrada pelo empréstimo de dinheiro ou rendimento de aplicações financeiras.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Inflação</div>
+                    <div class="definition">Aumento generalizado e contínuo dos preços de bens e serviços na economia.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Consumo Consciente</div>
+                    <div class="definition">Prática de consumir de forma responsável, considerando impactos sociais e ambientais.</div>
+                </div>
+                <div class="term-card">
+                    <div class="term">Endividamento</div>
+                    <div class="definition">Situação em que uma pessoa ou família possui dívidas a pagar.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Finanças Tech - Projeto Educativo sobre Economia Doméstica e Finanças Pessoais</p>
+            <p>Integrando conhecimentos de Matemática, Geografia, Sociologia e Português</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
